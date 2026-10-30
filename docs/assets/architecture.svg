@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+<title id="title">CloudBridge：Ubuntu 经百度网盘自动中转到 Windows</title>
+<desc id="desc">Ubuntu 扫描与稳定性检查，通过 rclone 和本机 OpenList 上传网盘；Windows 通过独立网关增量下载。虚线为可选 SSH 管理通道。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6" fill="#2563eb"/></marker></defs>
+<rect width="1120" height="430" rx="20" fill="#f8fafc"/>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei',sans-serif" fill="#172554">
+<text x="40" y="48" font-size="27" font-weight="700">CloudBridge · 自动文件中转</text>
+<text x="40" y="79" font-size="16" fill="#475569">文件经网盘传输；两端独立配置，保留相对目录结构</text>
+<rect x="40" y="118" width="310" height="200" rx="16" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="64" y="154" font-size="23" font-weight="700">Ubuntu 上传端</text>
+<text x="64" y="188" font-size="17">扫描目录 → 确认文件稳定</text>
+<text x="64" y="219" font-size="17">CloudBridge + SQLite 状态</text>
+<text x="64" y="250" font-size="17">rclone → 本机 OpenList</text>
+<text x="64" y="287" font-size="15" fill="#475569">新增/变化优先 · 增量上传 · 重试</text>
+<rect x="420" y="159" width="280" height="118" rx="18" fill="#dbeafe" stroke="#60a5fa"/>
+<text x="560" y="205" text-anchor="middle" font-size="25" font-weight="700">百度网盘</text>
+<text x="560" y="240" text-anchor="middle" font-size="16">专用中转目录</text>
+<rect x="770" y="118" width="310" height="200" rx="16" fill="#f0fdf4" stroke="#86efac"/>
+<text x="794" y="154" font-size="23" font-weight="700">Windows 下载端</text>
+<text x="794" y="188" font-size="17">本机 OpenList → rclone</text>
+<text x="794" y="219" font-size="17">CloudBridge + SQLite 状态</text>
+<text x="794" y="250" font-size="17">暂存 → 校验 → 最终文件</text>
+<text x="794" y="287" font-size="15" fill="#475569">增量下载 · 本地冲突保护</text>
+<path d="M350 218H414" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M700 218H764" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="385" y="199" font-size="14" text-anchor="middle">上传</text>
+<text x="735" y="199" font-size="14" text-anchor="middle">下载</text>
+<path d="M925 324V370H195V324" stroke="#2563eb" stroke-width="2" fill="none" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<rect x="332" y="349" width="456" height="40" rx="12" fill="#f8fafc"/>
+<text x="560" y="375" font-size="17" text-anchor="middle">可选 SSH：启动 / 停止 / 状态查询</text>
+<text x="40" y="411" font-size="14" fill="#64748b">示意图 · 默认不传播删除 · Windows 修改不会反向上传</text>
+</g></svg>

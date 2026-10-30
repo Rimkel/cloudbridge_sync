@@ -1,0 +1,33 @@
+app:
+  name: CloudBridge
+  mode: upload
+  log_level: INFO
+backend:
+  type: rclone_webdav
+  rclone_remote: baidu
+  # upload_remote: baidu-upload
+  cloud_root: /baidu/GPU-Transfer
+  reliable_modtime: false
+  reliable_hashes: false
+sync:
+  interval_seconds: 120  # 可改为 30 缩短轮间等待；文件年龄和双次稳定观察仍保留。
+  min_file_age_seconds: 120
+  max_concurrent_transfers: 2
+  retry_attempts: 5
+  retry_base_seconds: 5
+  retry_max_seconds: 300
+  # Enable only after replacing local_dir with your own source directory.
+  mappings:
+    - name: training
+      enabled: false
+      local_dir: ~/training-output
+      remote_dir: Training
+      recursive: true
+filters:
+  include: ['*.png', '*.jpg', '*.jpeg', '*.webp', '*.tif', '*.tiff']
+  exclude: ['*.tmp', '*.part', '*.partial', '.cloudbridge-*']
+  max_file_size_mb: 0
+state:
+  db_path: ~/.cloudbridge/upload.db
+logging:
+  file: ~/.cloudbridge/logs/upload.log

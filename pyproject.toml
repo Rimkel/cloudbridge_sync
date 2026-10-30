@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudbridge"
+version = "0.1.0"
+readme = "README.md"
+license = {file = "LICENSE"}
+description = "Non-destructive file relay through OpenList WebDAV and rclone"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6,<7", "pydantic>=2,<3"]
+
+[project.urls]
+Homepage = "https://github.com/Rimkel/cloudbridge_sync"
+Issues = "https://github.com/Rimkel/cloudbridge_sync/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+cloudbridge = "cloudbridge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cloudbridge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="455" viewBox="0 0 1120 455" role="img" aria-labelledby="title desc">
+<title id="title">CloudBridge 的目录映射</title><desc id="desc">本地根目录可以不同，Results 云端相对目录和 run1/image.png 相对文件路径保持一致。</desc>
+<rect width="1120" height="455" rx="20" fill="#f8fafc"/>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei',sans-serif" fill="#172554">
+<text x="40" y="48" font-size="26" font-weight="700">改根目录，保留相对路径</text>
+<text x="40" y="80" font-size="16" fill="#475569">示例映射名 results · remote_dir: Results</text>
+<rect x="40" y="109" width="1040" height="89" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="62" y="141" font-size="19" font-weight="700">Ubuntu</text>
+<text x="220" y="144" font-size="20">~/training-output/</text><text x="490" y="144" font-size="20" fill="#2563eb" font-weight="700">run1/image.png</text>
+<text x="220" y="175" font-size="15" fill="#475569">local_dir：上传源目录</text>
+<text x="60" y="222" font-size="19" fill="#2563eb">↓</text>
+<rect x="40" y="232" width="1040" height="89" rx="14" fill="#dbeafe" stroke="#60a5fa"/>
+<text x="62" y="264" font-size="19" font-weight="700">百度网盘</text>
+<text x="220" y="267" font-size="20">/baidu/GPU-Transfer/Results/</text><text x="620" y="267" font-size="20" fill="#2563eb" font-weight="700">run1/image.png</text>
+<text x="220" y="298" font-size="15" fill="#475569">cloud_root + remote_dir：两端指向同一位置</text>
+<text x="60" y="345" font-size="19" fill="#2563eb">↓</text>
+<rect x="40" y="355" width="1040" height="75" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+<text x="62" y="386" font-size="19" font-weight="700">Windows</text>
+<text x="220" y="387" font-size="20">D:/GPU-Results/</text><text x="470" y="387" font-size="20" fill="#2563eb" font-weight="700">run1/image.png</text>
+<text x="220" y="413" font-size="15" fill="#475569">local_dir：下载目标目录，可与上传端不同</text>
+</g></svg>

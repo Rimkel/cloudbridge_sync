@@ -1,0 +1,1 @@
+"""Replaceable storage adapters."""

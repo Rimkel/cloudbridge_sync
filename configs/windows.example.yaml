@@ -1,0 +1,34 @@
+app:
+  name: CloudBridge
+  mode: download
+  log_level: INFO
+backend:
+  type: rclone_webdav
+  rclone_remote: baidu
+  # download_remote: baidu-download
+  cloud_root: /baidu/GPU-Transfer
+  reliable_modtime: false
+  reliable_hashes: false
+sync:
+  interval_seconds: 120
+  min_file_age_seconds: 120
+  # Actual concurrent file downloads, shared across all mappings (1..32).
+  max_concurrent_transfers: 3
+  retry_attempts: 5
+  retry_base_seconds: 5
+  retry_max_seconds: 300
+  conflict_policy: skip
+  mappings:
+    - name: training
+      enabled: false
+      local_dir: D:/GPU-Images/Training
+      remote_dir: Training
+      recursive: true
+filters:
+  include: ['*.png', '*.jpg', '*.jpeg', '*.webp', '*.tif', '*.tiff']
+  exclude: ['*.tmp', '*.part', '*.partial', '.cloudbridge-*']
+  max_file_size_mb: 0
+state:
+  db_path: ~/.cloudbridge/download.db
+logging:
+  file: ~/.cloudbridge/logs/download.log

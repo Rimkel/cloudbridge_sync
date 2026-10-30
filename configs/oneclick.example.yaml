@@ -1,0 +1,27 @@
+# No passwords/tokens here. Local paths are relative to project_dir.
+# project_dir is relative to THIS file, so '..' means the CloudBridge root.
+# Replace with an EXISTING SSH alias or user@host that works on Windows.
+ssh_host: gpu-server
+refresh_seconds: 3
+local:
+  project_dir: ..
+  mode: download
+  sync_config: configs/windows.yaml
+  openlist_executable: openlist
+  openlist_data_dir: OpenList/data
+  openlist_management: managed
+  openlist_url: http://127.0.0.1:5244
+remote:
+  # Replace with your Ubuntu checkout's absolute path before running setup.
+  project_dir: /home/your-user/cloudbridge
+  mode: upload
+  sync_config: configs/ubuntu.yaml
+  openlist_executable: openlist
+  # Empty: discover the already running Ubuntu OpenList and remember its paths.
+  # Or fill in its ORIGINAL absolute data directory. Do not use a new empty dir.
+  openlist_data_dir: ''
+  # auto also reuses an active system openlist.service (no DB permissions needed).
+  # Use external to reuse a manually managed/container gateway without starting it.
+  openlist_management: auto
+  openlist_service: openlist.service
+  openlist_url: http://127.0.0.1:5244
